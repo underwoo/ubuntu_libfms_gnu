@@ -14,8 +14,8 @@ RUN apt-get update && \
                        netcdf-bin \
                        libnetcdf-dev \
                        libnetcdff-dev \
-                       openmpi-bin \
-                       libopenmpi-dev \
+                       mpich \
+                       libmpich-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Create the user to perform the build
@@ -24,9 +24,6 @@ RUN useradd -ms /bin/bash builder
 # Copy in the entrypoint and build scripts
 COPY startup.sh /root/startup.sh
 COPY build.sh /build.sh
-
-# Set the permissions on the scripts
-RUN chmod +x /root/startup.sh /build.sh
 
 # Set the base working directory
 WORKDIR /home/builder
