@@ -33,7 +33,7 @@ ENV CC=mpicc
 ENV FC=mpif90
 ENV FCFLAGS="-I/usr/include"
 
-ENTRYPOINT ["/root/startup.sh"]
+#ENTRYPOINT ["/root/startup.sh"]
 
-CMD ["/build.sh"]
+#CMD ["/build.sh"]
 
